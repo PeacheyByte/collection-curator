@@ -1,5 +1,3 @@
-Sellventory
-
 Inventory made simple — for buyers, sellers, and collectors.
 
 Sellventory is built for buyers, sellers, and collectors who want a clear, reliable way to keep track of their items. Whether you are reselling at markets, managing an online store, or curating a personal collection, Sellventory helps you stay organised without relying on complicated tools or cloud accounts.
