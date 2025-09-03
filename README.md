@@ -3,9 +3,10 @@
 </p>
 <p align="center">
   <a href="https://github.com/PeacheyByte/sellventory-companion/releases/latest/download/sellventory.exe">
-    <img src="https://img.shields.io/badge/Download-Windows%20EXE-blue?style=for-the-badge&logo=windows" alt="Download for Windows">
+    <img src="https://img.shields.io/badge/Download%20for-Windows-blue?style=for-the-badge&logo=windows" alt="Download for Windows">
   </a>
 </p>
+
 Inventory made simple — for buyers, sellers, and collectors.
 
 Sellventory is built for buyers, sellers, and collectors who want a clear, reliable way to keep track of their items. Whether you are reselling at markets, managing an online store, or curating a personal collection, Sellventory helps you stay organised without relying on complicated tools or cloud accounts.
