@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Sellventory_icon-final.png" alt="Sellventory logo" width="120">
+  <img src="Sellventory-icon-final.png" alt="Sellventory logo" width="120">
 </p>
 
 Inventory made simple — for buyers, sellers, and collectors.
