@@ -31,7 +31,7 @@ permalink: /roadmap/
 
 # Planned Additions
 
-A look at what’s coming next for Sellventory. This is a living roadmap.
+A look at what’s coming next for Sellventory. This is a evolving roadmap.
 
 ---
 
@@ -49,6 +49,7 @@ A look at what’s coming next for Sellventory. This is a living roadmap.
 - Dark mode.  
 - Advanced reports and charts.  
 - Optional cloud sync (opt-in only).
+- Label barcode and QR code creation and printing
 
 <!-- Footer buttons (same style everywhere) -->
 <style>
