@@ -5,7 +5,7 @@ description: Quick start guide for Sellventory testers
 permalink: /user-guide/
 ---
 
-## Sellventory — User Guide (Beta Test)
+## Sellventory — User Guide
 
 **Welcome!** This quick guide shows how to add items, what fields matter most, how search/sort/multi-select works, and how to back up or import/export your data. There’s also a short note on the desktop companion.
 
