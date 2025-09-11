@@ -51,6 +51,7 @@ With Sellventory you can:
 
 Everything is stored locally — no logins, no hidden syncs, and no internet required. Sellventory is designed to be lightweight, dependable, and under your control.
 
+
 ---
 
 {% include footer.html %}
