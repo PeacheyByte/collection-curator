@@ -12,3 +12,35 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* Make main content darker & crisper (leave header/footer alone) */
+.main-content p,
+.main-content li,
+.main-content td,
+.main-content th {
+  color: #222;            /* darker than #444 */
+}
+
+.main-content strong,
+.main-content b {
+  color: #111;            /* near-black for emphasis */
+  font-weight: 700;
+}
+
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+  color: #111;            /* headings stronger */
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* Keep link colour consistent with your footer */
+.main-content a {
+  color: #0066cc;
+  text-decoration: none;
+}
+.main-content a:hover { text-decoration: underline; }
