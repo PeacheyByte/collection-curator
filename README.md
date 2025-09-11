@@ -51,11 +51,4 @@ With Sellventory you can:
 
 Everything is stored locally — no logins, no hidden syncs, and no internet required. Sellventory is designed to be lightweight, dependable, and under your control.
 
-<footer style="text-align:center; margin-top:40px; font-size:1em; color:#444;">
-  <p style="font-weight:600; margin:4px 0;">Peachbyte Studios · Australia</p>
-  <p style="margin:4px 0;">
-    <a href="mailto:contact@yourdomain.com" style="color:#0066cc; text-decoration:none; font-weight:500;">
-      peacheybyte.studios@gmail.com
-    </a>
-  </p>
-</footer>
+{% include footer.html %}
