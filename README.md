@@ -50,3 +50,10 @@ With Sellventory you can:
 - **Use the Windows & Linux Companion.** Work with your database on a bigger screen, making editing, browsing, and reporting faster and more comfortable.
 
 Everything is stored locally — no logins, no hidden syncs, and no internet required. Sellventory is designed to be lightweight, dependable, and under your control.
+
+<footer style="text-align:center; margin-top:40px; font-size:0.9em; color:#ccc;">
+  <p>Peachbyte Studios · Australia</p>
+  <p><a href="mailto:contact@yourdomain.com" style="color:#ccc; text-decoration:none;">
+    contact@yourdomain.com
+  </a></p>
+</footer>
