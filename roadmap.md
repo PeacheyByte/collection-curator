@@ -73,3 +73,8 @@ A look at what’s coming next for Sellventory. This is a evolving roadmap.
   <a class="sv-btn" href="{{ site.baseurl }}/issues/">Known Issues</a>
   <a class="sv-btn" href="{{ site.baseurl }}/roadmap/">Planned Additions</a>
 </div>
+
+
+
+---
+{% include footer.html %}
