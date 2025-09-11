@@ -158,3 +158,8 @@ Use a consistent scheme so you always know what’s newest:
   <a class="sv-btn" href="{{ site.baseurl }}/issues/">Known Issues</a>
   <a class="sv-btn" href="{{ site.baseurl }}/roadmap/">Planned Additions</a>
 </div>
+
+
+
+---
+{% include footer.html %}
