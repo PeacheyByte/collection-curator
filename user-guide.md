@@ -136,6 +136,8 @@ While everything helps later, these have the biggest impact:
 ### Best-practice naming
 Use a consistent scheme so you always know what’s newest:
 
+---
+
 <!-- Footer buttons (same style everywhere) -->
 <style>
   .sv-nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:24px 0}
@@ -158,8 +160,6 @@ Use a consistent scheme so you always know what’s newest:
   <a class="sv-btn" href="{{ site.baseurl }}/issues/">Known Issues</a>
   <a class="sv-btn" href="{{ site.baseurl }}/roadmap/">Planned Additions</a>
 </div>
-
-
 
 ---
 {% include footer.html %}
