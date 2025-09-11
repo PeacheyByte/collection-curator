@@ -55,7 +55,7 @@ Everything is stored locally — no logins, no hidden syncs, and no internet req
   <p style="font-weight:600; margin:4px 0;">Peachbyte Studios · Australia</p>
   <p style="margin:4px 0;">
     <a href="mailto:contact@yourdomain.com" style="color:#0066cc; text-decoration:none; font-weight:500;">
-      contact@yourdomain.com
+      peacheybyte.studios@gmail.com
     </a>
   </p>
 </footer>
