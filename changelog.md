@@ -63,3 +63,8 @@ Here you’ll find a summary of updates as Sellventory develops.
   <a class="sv-btn" href="{{ site.baseurl }}/issues/">Known Issues</a>
   <a class="sv-btn" href="{{ site.baseurl }}/roadmap/">Planned Additions</a>
 </div>
+
+
+
+---
+{% include footer.html %}
