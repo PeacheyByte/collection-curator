@@ -49,7 +49,8 @@ A look at what’s coming next for Sellventory. This is a evolving roadmap.
 - Dark mode.  
 - Advanced reports and charts.  
 - Optional cloud sync (opt-in only).
-- Label barcode and QR code creation and printing
+- Label barcode and QR code creation and printing.
+- Label reading (Barcode/QR Code) - including item identification and database update.
 
 <!-- Footer buttons (same style everywhere) -->
 <style>
