@@ -45,7 +45,6 @@ Here you’ll find a summary of updates as Sellventory develops.
 - Many small bug fixes and layout modifications to increas useability and readability
 
 ## Version 1.22 (21 Sept 2025)
-- Initial closed testing release  
 - Fixed Font Bug - White on white background  
 - Added new feature - Add item now gives the option of using a Gallery Image or device camera
 
