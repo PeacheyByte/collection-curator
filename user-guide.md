@@ -52,10 +52,9 @@ permalink: /user-guide/
 
 ## How to Add an Item
 1. **Tap “Add Item”** on the main screen.
-2. Choose **Use Camera** or **Use Gallery**  
-3. **Add Item**: take a new photo or pick one from your gallery.  
-4. **Fill key details** (see *Important Fields to Fill* below).  
-5. **Tap Save**. Your item appears in the list and gallery.
+2. Choose **Use Camera** or **Use Gallery**: take a new photo or pick one from your gallery.  
+3. **Fill key details** (see *Important Fields to Fill* below).  
+4. **Tap Save**. Your item appears in the list and gallery.
 
 > Tip: The **Bought Date** auto-fills from the photo’s EXIF when available. You can edit it if needed.
 
