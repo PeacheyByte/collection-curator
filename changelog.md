@@ -42,7 +42,7 @@ Here you’ll find a summary of updates as Sellventory develops.
 - Bug fixes and improvements
 
 ## Versions 1.17 to 1.21 (Sept 2025)
-- Many small bug fixes and layout modifications to increas useability and readability
+- Many small bug fixes and layout modifications to increas usability and readability
 
 ## Version 1.22 (21 Sept 2025)
 - Fixed Font Bug - White on white background  
