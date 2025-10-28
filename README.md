@@ -31,6 +31,14 @@
   .sv-btn:hover{background:#155d9a;border-color:#0f4c86;box-shadow:0 3px 10px rgba(0,0,0,.2)}
   .sv-btn:focus{outline:3px solid #99c2ff;outline-offset:2px}
 
+  /* keep buttons readable even after they've been visited */
+.sv-nav .sv-btn:link,
+.sv-nav .sv-btn:visited {
+  color: #fff !important;
+  background: #1e6bb8 !important;
+  border-color: #155d9a !important;
+}
+
   @media (prefers-color-scheme: dark){
     .sv-btn{background:#2a7bd6;border-color:#1c5ea6}
     .sv-btn:hover{background:#1f6ac0}
@@ -51,9 +59,9 @@
 <!-- Body -->
 Inventory made simple — for buyers, sellers, and collectors.
 
-Sellventory is built for buyers, sellers, and collectors who want a clear, reliable way to keep track of their items. Whether you are reselling at markets, managing an online store, or curating a personal collection, Sellventory helps you stay organised without relying on complicated tools or cloud accounts.
+The Collection Curator is built for buyers, sellers, and collectors who want a clear, reliable way to keep track of their items. Whether you are reselling at markets, managing an online store, or curating a personal collection, The Collection Curator helps you stay organised without relying on complicated tools or cloud accounts.
 
-With Sellventory you can:
+With The Collection Curator  you can:
 
 - **Record your items with photos and details.** Each entry can store a picture, purchase price, notes, and custom tags, giving you a complete view of what you own or intend to sell.
 
