@@ -1,7 +1,7 @@
 ---
 layout: default
 title: User Guide
-description: Quick start guide for Sellventory testers
+description: Quick start guide for The Collection Curator Users
 permalink: /user-guide/
 ---
 <!-- Top text nav -->
@@ -30,7 +30,7 @@ permalink: /user-guide/
 <hr style="max-width:880px; margin:0 auto 24px; border:none; border-top:1px solid #e5e5e5;">
 
 
-## Sellventory — User Guide
+## The Collection Curator — User Guide
 
 **Welcome!** This quick guide shows how to add items, what fields matter most, how search/sort/multi-select works, and how to back up or import/export your data. There’s also a short note on the desktop companion.
 
