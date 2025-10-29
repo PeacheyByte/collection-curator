@@ -5,19 +5,26 @@
   <img src="Sellventory-icon-final.png" alt="Sellventory logo" width="120">
 </p>
 
-<!-- DOWNLOAD ROW -->
-<div class="dl-row">
-  <!-- Google Play badge -->
-  <a href="https://play.google.com/store/apps/details?id=com.peachbyte.sellventory" aria-label="Get it on Google Play">
-    <img class="play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-         alt="Get it on Google Play">
-  </a>
+<!-- DOWNLOAD AREA -->
+<div class="download-card">
+  <div class="dl-row">
+    <!-- Google Play badge -->
+    <a class="gp-badge"
+       href="https://play.google.com/store/apps/details?id=com.peachbyte.sellventory"
+       aria-label="Get it on Google Play">
+      <img
+        src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+        alt="Get it on Google Play" />
+    </a>
 
-  <!-- Windows download button -->
-  <a class="btn-win" href="https://github.com/PeacheyByte/sellventory-companion/releases/latest/download/sellventory.exe">
-    Download for Windows
-  </a>
+    <!-- Windows download button -->
+    <a class="btn-win"
+       href="https://github.com/PeacheyByte/sellventory-companion/releases/latest/download/sellventory.exe">
+      <span class="btn-win__label">Download for Windows</span>
+    </a>
+  </div>
 </div>
+
 
 <!-- === Sellventory navigation buttons === -->
 <div class="sv-nav">
