@@ -5,7 +5,6 @@ body { color:#444; font-size:1em; line-height:1.6; }
 a { color:#0066cc; text-decoration:none; }
 a:hover { text-decoration:underline; }
 
-/* Make main content darker & crisper (leave header/footer alone) */
 .main-content p,
 .main-content li,
 .main-content td,
@@ -25,22 +24,22 @@ a:hover { text-decoration:underline; }
 .main-content a:hover { text-decoration:underline; }
 
 /* =========================
-   Download area (light frame)
+   Downloads card (light frame)
    ========================= */
-/* Light, minimal frame — no big shadow, per your request */
 .download-card{
-  max-width: 760px;
-  margin: 14px auto 14px;
-  padding: 12px 16px;
-  background: transparent;                     /* no grey slab */
-  border: 1px solid rgba(0,0,0,.08);           /* just a light border */
-  border-radius: 12px;
-  box-shadow: none;
+  max-width:760px;
+  margin:14px auto 14px;
+  padding:10px 14px;
+  border:1px solid rgba(0,0,0,.12);     /* light border as requested */
+  border-radius:12px;
+  background:rgba(255,255,255,.6);      /* very light backing so border reads */
+  backdrop-filter: blur(2px);
+  box-shadow:none;
 }
-
 @media (prefers-color-scheme: dark){
   .download-card{
-    border-color: rgba(255,255,255,.14);
+    border-color:rgba(255,255,255,.18);
+    background:rgba(0,0,0,.18);
   }
 }
 
@@ -49,158 +48,104 @@ a:hover { text-decoration:underline; }
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:20px;                 /* space between Play & Windows */
-  flex-wrap:wrap;           /* stack on narrow screens */
-  padding: 6px 0;
-  margin: 0;
+  gap:20px;
+  flex-wrap:wrap;
+  padding:6px 0;
+  margin:0;
 }
 
-/* =========================
-   Google Play badge — sizing
-   ========================= */
+/* Google Play badge — fixed height so we can match the Windows button */
 .gp-badge img{
   display:block;
-  height:64px;              /* you said current size feels right */
+  height:64px;                          /* canonical height */
   width:auto;
   max-width:100%;
   image-rendering: -webkit-optimize-contrast;
 }
-
-@media (max-width: 560px){
+@media (max-width:560px){
   .gp-badge img{ height:56px; }
 }
 
-/* ==========================================================
-   Windows button — two-segment style (original look you want)
-   Usage (HTML): <a class="btn-win btn-win--seg"
-                    data-left="DOWNLOAD FOR"
-                    data-right="WINDOWS COMPANION" href="..."></a>
-   ========================================================== */
-
-/* Fallback (if you keep old markup without data-*) — simple solid CTA */
-.btn-win{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding:14px 18px;
-  border-radius:10px;
-  text-decoration:none !important;
-  color:#fff !important;
-  font-weight:700;
-  font-size:1.05rem;
-  line-height:1.2;
-  letter-spacing:.2px;
-  background:#0b5ed7;
-  border:1px solid #0a53be;
-  transition: transform .08s ease, background .15s ease, box-shadow .15s ease;
+/* =========================
+   Windows button (two-segment, original look)
+   =========================
+   HTML: <a class="btn-win btn-win--seg" data-left="DOWNLOAD FOR"
+            data-right="WINDOWS COMPANION" href="..."></a>
+*/
+.btn-win{                                      /* fallback solid CTA (unused when --seg is present) */
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:14px 18px; border-radius:10px;
+  text-decoration:none!important; color:#fff!important;
+  font-weight:700; font-size:1.05rem; line-height:1.2; letter-spacing:.2px;
+  background:#0b5ed7; border:1px solid #0a53be;
+  transition: transform .08s ease, background .15s ease;
 }
-.btn-win:hover,
-.btn-win:focus{ background:#0a58ca; transform:translateY(-1px); }
+.btn-win:hover,.btn-win:focus{ background:#0a58ca; transform:translateY(-1px); }
 .btn-win:active{ transform:translateY(0); }
 .btn-win:focus-visible{ outline:3px solid #ffd166; outline-offset:3px; }
 
-/* Two-segment variant (exact “DOWNLOAD FOR | WINDOWS” look) */
+/* Exact segmented style */
 .btn-win--seg{
   position:relative;
-  overflow:hidden;
-  padding:0;                              /* segments handle padding */
+  display:inline-flex;
+  height:64px;                               /* match Play badge height */
+  border:1px solid rgba(0,0,0,.18);
   border-radius:8px;
-  border:1px solid rgba(0,0,0,.18);       /* thin outline like your reference */
-  background:transparent;                 /* segments show their own colors */
-  box-shadow:none;
+  overflow:hidden;
+  background:transparent;
   font-weight:800;
-  font-size:0.95rem;                      /* slightly tighter, like the ref */
+  font-size:0.95rem;                          /* compact like the reference */
   letter-spacing:.3px;
-  text-transform:none;                    /* keep case as given in data-* */
 }
-
-/* Left grey segment: “DOWNLOAD FOR” */
 .btn-win--seg::before{
-  content: attr(data-left);
-  display:inline-block;
-  padding:10px 12px;
-  background:#6b7280;                     /* neutral grey */
+  content: attr(data-left);                   /* "DOWNLOAD FOR" */
+  display:inline-flex; align-items:center;
+  padding:0 16px;
+  background:#6b7280;                         /* neutral grey */
   color:#fff;
-  line-height:1;
+  line-height:64px;
 }
-
-/* Right blue segment: “WINDOWS COMPANION” */
 .btn-win--seg::after{
-  content: attr(data-right);
-  display:inline-block;
-  padding:10px 12px;
-  background:#0d6efd;                     /* Windows-y blue */
-  color:#fff;
-  line-height:1;
-  font-weight:900;
+  content: attr(data-right);                  /* "WINDOWS COMPANION" */
+  display:inline-flex; align-items:center;
+  padding:0 16px;
+  background:#0d6efd;                         /* Windows blue */
+  color:#fff; font-weight:900;
+  line-height:64px;
 }
-
-/* Hover/focus: subtle lift & darker blue on the right segment */
 .btn-win--seg:hover::after,
-.btn-win--seg:focus::after{
-  background:#0b5ed7;
-}
-
+.btn-win--seg:focus::after{ background:#0b5ed7; }
 .btn-win--seg:hover,
-.btn-win--seg:focus{
-  transform: translateY(-1px);
+.btn-win--seg:focus{ transform:translateY(-1px); }
+.btn-win--seg:active{ transform:translateY(0); }
+.btn-win--seg:focus-visible{ outline:3px solid #ffd166; outline-offset:3px; }
+
+@media (max-width:560px){
+  .btn-win--seg{ height:56px; width:100%; }   /* stack neatly under Play badge */
+  .btn-win--seg::before, .btn-win--seg::after{ line-height:56px; }
 }
 
-.btn-win--seg:active{
-  transform: translateY(0);
-}
-
-.btn-win--seg:focus-visible{
-  outline:3px solid #ffd166;
-  outline-offset:3px;
-}
-
-/* Full-width on phones so it sits neatly under the Play badge if wrapped */
-@media (max-width: 560px){
-  .btn-win--seg{ width:100%; text-align:center; }
-}
-
-/* Slight rendering polish */
-.btn-win,
-.btn-win--seg,
-.btn-win *{
+/* Rendering polish */
+.btn-win, .btn-win--seg, .btn-win *{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings:"liga" 1, "kern" 1;
+  font-feature-settings:"liga" 1,"kern" 1;
 }
 
 /* =========================
-   Navigation chips (lighter)
+   Navigation chips (kept lighter)
    ========================= */
 .sv-nav{
-  display:flex;
-  justify-content:center;
-  gap:14px;
-  flex-wrap:wrap;
-  margin:22px 0;
+  display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin:22px 0;
 }
-
 .sv-btn{
-  display:inline-block;
-  padding:12px 18px;
-  border:1px solid #155d9a;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:700;
-  font-size:0.98rem;
-  background:#1e6bb8;
-  color:#fff;
-  line-height:1.2;
-  letter-spacing:.2px;
-  box-shadow:0 2px 6px rgba(0,0,0,.12);
+  display:inline-block; padding:12px 18px; border:1px solid #155d9a; border-radius:10px;
+  text-decoration:none; font-weight:700; font-size:0.98rem; background:#1e6bb8; color:#fff;
+  line-height:1.2; letter-spacing:.2px; box-shadow:0 2px 6px rgba(0,0,0,.12);
 }
-
-.sv-btn:link,
-.sv-btn:visited { color:#fff; background:#1e6bb8; border-color:#155d9a; }
+.sv-btn:link,.sv-btn:visited{ color:#fff; background:#1e6bb8; border-color:#155d9a; }
 .sv-btn:hover{ background:#155d9a; border-color:#0f4c86; box-shadow:0 3px 10px rgba(0,0,0,.18); }
 .sv-btn:focus{ outline:3px solid #99c2ff; outline-offset:2px; }
-
 @media (prefers-color-scheme: dark){
   .sv-btn{ background:#2a7bd6; border-color:#1c5ea6; }
   .sv-btn:hover{ background:#1f6ac0; }
