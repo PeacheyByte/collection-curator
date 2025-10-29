@@ -1,4 +1,6 @@
-/* Base text tweaks */
+/* =========================
+   Base text & content tweaks
+   ========================= */
 body { color:#444; font-size:1em; line-height:1.6; }
 a { color:#0066cc; text-decoration:none; }
 a:hover { text-decoration:underline; }
@@ -22,52 +24,134 @@ a:hover { text-decoration:underline; }
 .main-content a { color:#0066cc; text-decoration:none; }
 .main-content a:hover { text-decoration:underline; }
 
-/* ===== Download row ===== */
+/* =========================
+   Download area (card + row)
+   ========================= */
+.download-card{
+  max-width: 760px;
+  margin: 14px auto 18px;
+  padding: 16px 22px 18px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid #e7eef8;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06), 0 4px 10px rgba(0,0,0,.04);
+  backdrop-filter: blur(6px);
+}
+
+@media (prefers-color-scheme: dark){
+  .download-card{
+    background: rgba(25,32,45,.65);
+    border-color: rgba(255,255,255,.08);
+    box-shadow: 0 12px 26px rgba(0,0,0,.35), 0 3px 8px rgba(0,0,0,.3);
+  }
+}
+
+/* Single source of truth for the row layout */
 .dl-row{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:18px;
-  margin:22px 0;
-  flex-wrap:wrap; /* stacks on small screens */
+  gap:20px;                /* space between Play & Windows */
+  flex-wrap:wrap;          /* stack on small screens */
+  padding: 4px 0;
+  margin: 0;
 }
 
-/* Bigger, crisp Play badge */
-.play-badge{
-  height:64px;                 /* larger than nav chips */
+/* Google Play badge — crisp and sensibly sized */
+.gp-badge img{
+  display:block;
+  height:84px;             /* desktop */
+  width:auto;
   max-width:100%;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,.15));
+  image-rendering: -webkit-optimize-contrast;
 }
 
-/* Prominent Windows button (stronger than nav chips) */
+/* Responsive steps for badge & button */
+@media (max-width: 900px){
+  .gp-badge img{ height:72px; }
+}
+@media (max-width: 560px){
+  .gp-badge img{ height:56px; }   /* no giant badge on phones */
+}
+
+/* =========================
+   Windows button (CTA)
+   ========================= */
 .btn-win{
-  display:inline-block;
-  padding:14px 24px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:800;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 20px;
+  border-radius:14px;
+  text-decoration:none !important;
+  color:#fff !important;
+  font-weight:700;                 /* strong but not chunky */
   font-size:1.05rem;
-  line-height:1;
-  color:#fff;
-  border:2px solid #0d56a7;
-  background: linear-gradient(180deg,#1580ff 0%, #0d6ae6 100%);
-  box-shadow:0 6px 14px rgba(13,86,167,.25), 0 2px 4px rgba(0,0,0,.08);
-  transition: transform .05s ease-out, box-shadow .15s ease, background .15s ease;
+  line-height:1.2;
+  letter-spacing:0.2px;
+
+  /* High-contrast solid CTA (not “glassy”, better readability) */
+  background:#0b5ed7;
+  border:1px solid #0a53be;
+
+  /* Soft depth without fuzziness */
+  box-shadow:0 6px 18px rgba(11,94,215,0.28), 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform .08s ease, box-shadow .15s ease, background .15s ease;
 }
-.btn-win:visited{ color:#fff; }
-.btn-win:hover{
+
+/* Add a clean Windows logo without changing your HTML */
+.btn-win::before{
+  content:"";
+  width:22px;
+  height:22px;
+  display:inline-block;
+  background-repeat:no-repeat;
+  background-size:contain;
+  /* white Windows logo via inline SVG */
+  background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M1 3.5l10-1.8v9.3H1V3.5zm10 9.5v9.3L1 20.5v-7.5h10zM23 2v9h-11V3.1L23 2zm-11 11h11v9l-11 1.1V13z"/></svg>');
+}
+
+.btn-win:hover,
+.btn-win:focus{
+  background:#0a58ca;
+  box-shadow:0 10px 24px rgba(11,94,215,0.34), 0 3px 10px rgba(0,0,0,0.12);
   transform: translateY(-1px);
-  background: linear-gradient(180deg,#0f73f0 0%, #0a5fd0 100%);
-  box-shadow:0 8px 18px rgba(13,86,167,.35), 0 3px 6px rgba(0,0,0,.12);
 }
-@media (prefers-color-scheme: dark){
+
+.btn-win:active{
+  transform: translateY(0);
+}
+
+.btn-win:focus-visible{
+  outline:3px solid #ffd166;      /* high-contrast focus ring */
+  outline-offset:3px;
+}
+
+/* Subtle text rendering improvements */
+.btn-win,
+.btn-win *{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga" 1, "kern" 1;
+}
+
+/* Slightly adjust sizing on narrow screens for comfort */
+@media (max-width: 900px){
+  .btn-win{ font-size:1rem; padding:13px 18px; }
+  .btn-win::before{ width:20px; height:20px; }
+}
+@media (max-width: 560px){
   .btn-win{
-    border-color:#2a8bff;
-    background: linear-gradient(180deg,#2a8bff 0%, #1d6fe0 100%);
+    width:100%;                /* full-width on phones */
+    border-radius:12px;
+    padding:12px 16px;
   }
 }
 
-/* ===== Navigation chips (kept lighter than the Windows button) ===== */
+/* =========================
+   Navigation chips (lighter than CTA)
+   ========================= */
 .sv-nav{
   display:flex;
   justify-content:center;
@@ -75,6 +159,7 @@ a:hover { text-decoration:underline; }
   flex-wrap:wrap;
   margin:26px 0;
 }
+
 .sv-btn{
   display:inline-block;
   padding:12px 18px;
@@ -89,6 +174,7 @@ a:hover { text-decoration:underline; }
   letter-spacing:.2px;
   box-shadow:0 2px 6px rgba(0,0,0,.15);
 }
+
 .sv-btn:link,
 .sv-btn:visited { color:#fff; background:#1e6bb8; border-color:#155d9a; }
 .sv-btn:hover{ background:#155d9a; border-color:#0f4c86; box-shadow:0 3px 10px rgba(0,0,0,.2); }
@@ -98,86 +184,3 @@ a:hover { text-decoration:underline; }
   .sv-btn{ background:#2a7bd6; border-color:#1c5ea6; }
   .sv-btn:hover{ background:#1f6ac0; }
 }
-/* ---- Download area card (visual separation) ---- */
-.download-card{
-  max-width: 760px;
-  margin: 10px auto 18px;
-  padding: 16px 22px;
-  background: rgba(255,255,255,.92);
-  border: 1px solid #e7eef8;
-  border-radius: 14px;
-  box-shadow: 0 10px 24px rgba(0,0,0,.06), 0 4px 10px rgba(0,0,0,.04);
-  backdrop-filter: blur(6px);
-}
-@media (prefers-color-scheme: dark){
-  .download-card{
-    background: rgba(25,32,45,.65);
-    border-color: rgba(255,255,255,.08);
-    box-shadow: 0 12px 26px rgba(0,0,0,.35), 0 3px 8px rgba(0,0,0,.3);
-  }
-}
-
-/* Row layout stays centered */
-.dl-row{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-/* Google Play badge sizing */
-.gp-badge img{
-  height: 64px;
-  display: block;
-}
-@media (min-width: 860px){
-  .gp-badge img{ height: 70px; }
-}
-
-/* Prominent Windows button (higher contrast + readability) */
-.btn-win{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 22px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 1.05rem;
-  letter-spacing: .2px;
-  color: #fff;
-  /* Accessible gradient with strong contrast */
-  background: linear-gradient(180deg, #2a83ff 0%, #1f5fe0 100%);
-  border: 1px solid #164db8;
-  box-shadow:
-    0 10px 18px rgba(32, 99, 224, .24),
-    0 2px 0 rgba(0,0,0,.05) inset;
-  text-shadow: 0 1px 0 rgba(0,0,0,.25);
-  transition: transform .06s ease-out, box-shadow .12s ease-out, background .12s ease-out;
-}
-.btn-win:hover{
-  background: linear-gradient(180deg, #2f8dff 0%, #1d56cc 100%);
-  transform: translateY(-1px);
-  box-shadow:
-    0 12px 22px rgba(32, 99, 224, .28),
-    0 2px 0 rgba(0,0,0,.08) inset;
-}
-.btn-win:active{
-  transform: translateY(0);
-  box-shadow:
-    0 8px 16px rgba(32, 99, 224, .22),
-    0 1px 0 rgba(0,0,0,.1) inset;
-}
-.btn-win:focus{
-  outline: 3px solid #99c2ff;
-  outline-offset: 2px;
-}
-
-/* Slightly larger text inside the button on narrow screens for readability */
-@media (max-width: 420px){
-  .btn-win{ font-size: 1.08rem; padding: 15px 22px; }
-}
-
-/* Keep nav chips visually lighter than the Windows button (already present) */
-/* No changes required if you want them less prominent */
