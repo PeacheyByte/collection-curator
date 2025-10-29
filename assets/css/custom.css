@@ -98,3 +98,86 @@ a:hover { text-decoration:underline; }
   .sv-btn{ background:#2a7bd6; border-color:#1c5ea6; }
   .sv-btn:hover{ background:#1f6ac0; }
 }
+/* ---- Download area card (visual separation) ---- */
+.download-card{
+  max-width: 760px;
+  margin: 10px auto 18px;
+  padding: 16px 22px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid #e7eef8;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06), 0 4px 10px rgba(0,0,0,.04);
+  backdrop-filter: blur(6px);
+}
+@media (prefers-color-scheme: dark){
+  .download-card{
+    background: rgba(25,32,45,.65);
+    border-color: rgba(255,255,255,.08);
+    box-shadow: 0 12px 26px rgba(0,0,0,.35), 0 3px 8px rgba(0,0,0,.3);
+  }
+}
+
+/* Row layout stays centered */
+.dl-row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* Google Play badge sizing */
+.gp-badge img{
+  height: 64px;
+  display: block;
+}
+@media (min-width: 860px){
+  .gp-badge img{ height: 70px; }
+}
+
+/* Prominent Windows button (higher contrast + readability) */
+.btn-win{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: .2px;
+  color: #fff;
+  /* Accessible gradient with strong contrast */
+  background: linear-gradient(180deg, #2a83ff 0%, #1f5fe0 100%);
+  border: 1px solid #164db8;
+  box-shadow:
+    0 10px 18px rgba(32, 99, 224, .24),
+    0 2px 0 rgba(0,0,0,.05) inset;
+  text-shadow: 0 1px 0 rgba(0,0,0,.25);
+  transition: transform .06s ease-out, box-shadow .12s ease-out, background .12s ease-out;
+}
+.btn-win:hover{
+  background: linear-gradient(180deg, #2f8dff 0%, #1d56cc 100%);
+  transform: translateY(-1px);
+  box-shadow:
+    0 12px 22px rgba(32, 99, 224, .28),
+    0 2px 0 rgba(0,0,0,.08) inset;
+}
+.btn-win:active{
+  transform: translateY(0);
+  box-shadow:
+    0 8px 16px rgba(32, 99, 224, .22),
+    0 1px 0 rgba(0,0,0,.1) inset;
+}
+.btn-win:focus{
+  outline: 3px solid #99c2ff;
+  outline-offset: 2px;
+}
+
+/* Slightly larger text inside the button on narrow screens for readability */
+@media (max-width: 420px){
+  .btn-win{ font-size: 1.08rem; padding: 15px 22px; }
+}
+
+/* Keep nav chips visually lighter than the Windows button (already present) */
+/* No changes required if you want them less prominent */
