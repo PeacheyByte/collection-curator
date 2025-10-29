@@ -2,22 +2,28 @@
 <p align="center">
   <img src="Sellventory-icon-final.png" alt="Sellventory logo" width="120">
 </p>
-<div style="display:flex; justify-content:center; align-items:center; gap:20px; flex-wrap:wrap; margin-top:20px;">
+<!-- DOWNLOAD ROW -->
+<style>
+  .dl-row{display:flex;justify-content:center;align-items:center;gap:16px;margin:22px 0}
+  .btn-win{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;
+           background:#1e6bb8;color:#fff;font-weight:700;line-height:1;border:1px solid #155d9a}
+  .btn-win:visited{color:#fff}
+  .btn-win:hover{background:#0f62fe}
+</style>
 
-  <!-- Google Play -->
-  <a href="https://play.google.com/store/apps/details?id=com.peachbyte.sellventory" target="_blank" rel="noopener">
+<div class="dl-row">
+  <!-- Google Play badge -->
+  <a href="https://play.google.com/store/apps/details?id=com.peachbyte.sellventory" aria-label="Get it on Google Play">
     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-         alt="Get it on Google Play" style="height:60px; width:auto;"/>
+         alt="Get it on Google Play" height="60">
   </a>
 
-  <!-- Windows download -->
-  <a class="sv-btn" href="/path/to/windows-download.zip"
-     style="display:inline-block; padding:12px 18px; border:1px solid #155d9a; border-radius:10px; text-decoration:none;
-            font-weight:700; background:#1e6bb8; color:#fff;">
-     DOWNLOAD FOR WINDOWS
+  <!-- Windows download button -->
+  <a class="btn-win" href="https://github.com/PeacheyByte/sellventory-companion/releases/latest/download/sellventory.exe">
+    Download for Windows
   </a>
-
 </div>
+
 
 
 <!-- === Sellventory navigation buttons === -->
