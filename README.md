@@ -2,6 +2,14 @@
 <p align="center">
   <img src="Sellventory-icon-final.png" alt="Sellventory logo" width="120">
 </p>
+<!-- Download from Google Play -->
+<!-- Google Play badge (official) -->
+<a href="https://play.google.com/store/apps/details?id=com.peachbyte.sellventory"
+   target="_blank" rel="noopener">
+  <img alt="Get it on Google Play"
+       src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+       style="height:60px; width:auto;" />
+</a>
 <!-- Download link and button -->
 <p align="center">
   <a href="https://github.com/PeacheyByte/sellventory-companion/releases/latest/download/sellventory.exe">
