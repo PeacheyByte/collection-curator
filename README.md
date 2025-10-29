@@ -17,12 +17,11 @@
         alt="Get it on Google Play" />
     </a>
 
-    <!-- Windows download button (segmented style) -->
+   <!-- Windows download button (segmented, matches original) -->
 <a class="btn-win btn-win--seg"
    href="https://github.com/PeacheyByte/sellventory-companion/releases/latest/download/sellventory.exe"
    data-left="DOWNLOAD FOR"
-   data-right="WINDOWS COMPANION">
-</a>
+   data-right="WINDOWS COMPANION"></a>
 
   </div>
 </div>
