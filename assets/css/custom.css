@@ -44,3 +44,26 @@ a:hover {
   text-decoration: none;
 }
 .main-content a:hover { text-decoration: underline; }
+
+/* Download row */
+.dl-row{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:16px;
+  margin:22px 0;
+}
+.btn-win{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:10px;
+  text-decoration:none;
+  background:#1e6bb8;
+  color:#fff;
+  font-weight:700;
+  line-height:1;
+  border:1px solid #155d9a;
+}
+.btn-win:visited{color:#fff}
+.btn-win:hover{background:#0f62fe}
+
