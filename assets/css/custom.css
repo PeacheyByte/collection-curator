@@ -1,85 +1,73 @@
-/* ---- Base text styles ---- */
-body {
-  color: #444;
-  font-size: 1em;
-  line-height: 1.6;
-}
+/* Base text tweaks */
+body { color:#444; font-size:1em; line-height:1.6; }
+a { color:#0066cc; text-decoration:none; }
+a:hover { text-decoration:underline; }
 
-a { color: #0066cc; text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* Main content contrast (leave header/footer alone) */
+/* Make main content darker & crisper (leave header/footer alone) */
 .main-content p,
 .main-content li,
 .main-content td,
-.main-content th { color: #222; }
+.main-content th { color:#222; }
 
 .main-content strong,
-.main-content b { color: #111; font-weight: 700; }
+.main-content b { color:#111; font-weight:700; }
 
 .main-content h1,
 .main-content h2,
 .main-content h3,
 .main-content h4,
 .main-content h5,
-.main-content h6 {
-  color: #111;
-  font-weight: 700;
-  line-height: 1.25;
-}
+.main-content h6 { color:#111; font-weight:700; line-height:1.25; }
 
-/* Keep link colour consistent with your footer */
-.main-content a { color: #0066cc; text-decoration: none; }
-.main-content a:hover { text-decoration: underline; }
+.main-content a { color:#0066cc; text-decoration:none; }
+.main-content a:hover { text-decoration:underline; }
 
-
-/* =========================
-   Download row (Play + Win)
-   ========================= */
+/* ===== Download row ===== */
 .dl-row{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:16px;
-  flex-wrap:wrap;          /* stack neatly on small screens */
-  margin:24px 0;
+  gap:18px;
+  margin:22px 0;
+  flex-wrap:wrap; /* stacks on small screens */
 }
 
-/* Make the Play badge consistent and crisp */
-.dl-row a img{
-  height:60px;             /* same height as before */
-  display:block;
+/* Bigger, crisp Play badge */
+.play-badge{
+  height:64px;                 /* larger than nav chips */
+  max-width:100%;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.15));
 }
 
-/* Windows download button */
+/* Prominent Windows button (stronger than nav chips) */
 .btn-win{
   display:inline-block;
-  padding:12px 18px;
-  border-radius:10px;
+  padding:14px 24px;
+  border-radius:12px;
   text-decoration:none;
-  background:#1e6bb8;
-  color:#fff;
-  font-weight:700;
+  font-weight:800;
+  font-size:1.05rem;
   line-height:1;
-  border:1px solid #155d9a;
-  box-shadow:0 2px 6px rgba(0,0,0,.15);
+  color:#fff;
+  border:2px solid #0d56a7;
+  background: linear-gradient(180deg,#1580ff 0%, #0d6ae6 100%);
+  box-shadow:0 6px 14px rgba(13,86,167,.25), 0 2px 4px rgba(0,0,0,.08);
+  transition: transform .05s ease-out, box-shadow .15s ease, background .15s ease;
 }
-.btn-win:visited{ color:#fff; } /* keep readable after visit */
+.btn-win:visited{ color:#fff; }
 .btn-win:hover{
-  background:#0f62fe;
-  box-shadow:0 3px 10px rgba(0,0,0,.2);
+  transform: translateY(-1px);
+  background: linear-gradient(180deg,#0f73f0 0%, #0a5fd0 100%);
+  box-shadow:0 8px 18px rgba(13,86,167,.35), 0 3px 6px rgba(0,0,0,.12);
 }
-.btn-win:focus{ outline:3px solid #99c2ff; outline-offset:2px; }
-
-@media (max-width: 480px){
-  .dl-row a img{ height:52px; }
-  .btn-win{ padding:10px 14px; }
+@media (prefers-color-scheme: dark){
+  .btn-win{
+    border-color:#2a8bff;
+    background: linear-gradient(180deg,#2a8bff 0%, #1d6fe0 100%);
+  }
 }
 
-
-/* =========================
-   App nav buttons (below)
-   ========================= */
+/* ===== Navigation chips (kept lighter than the Windows button) ===== */
 .sv-nav{
   display:flex;
   justify-content:center;
@@ -87,7 +75,6 @@ a:hover { text-decoration: underline; }
   flex-wrap:wrap;
   margin:26px 0;
 }
-
 .sv-btn{
   display:inline-block;
   padding:12px 18px;
@@ -102,23 +89,11 @@ a:hover { text-decoration: underline; }
   letter-spacing:.2px;
   box-shadow:0 2px 6px rgba(0,0,0,.15);
 }
-
-/* Keep buttons readable even after they've been visited */
-.sv-nav .sv-btn:link,
-.sv-nav .sv-btn:visited {
-  color:#fff !important;
-  background:#1e6bb8 !important;
-  border-color:#155d9a !important;
-}
-
-.sv-btn:hover{
-  background:#155d9a;
-  border-color:#0f4c86;
-  box-shadow:0 3px 10px rgba(0,0,0,.2);
-}
+.sv-btn:link,
+.sv-btn:visited { color:#fff; background:#1e6bb8; border-color:#155d9a; }
+.sv-btn:hover{ background:#155d9a; border-color:#0f4c86; box-shadow:0 3px 10px rgba(0,0,0,.2); }
 .sv-btn:focus{ outline:3px solid #99c2ff; outline-offset:2px; }
 
-/* Subtle dark-mode tune */
 @media (prefers-color-scheme: dark){
   .sv-btn{ background:#2a7bd6; border-color:#1c5ea6; }
   .sv-btn:hover{ background:#1f6ac0; }
