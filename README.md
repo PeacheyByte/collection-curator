@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ '/assets/css/custom.css?v=3' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/custom.css?v=7' | relative_url }}">
 
 <!-- App Logo -->
 <p align="center">
