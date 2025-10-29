@@ -1,6 +1,12 @@
 /* =========================
    Base text & content tweaks
    ========================= */
+:root{
+  /* One knob to size BOTH buttons */
+  --dl-h: 66px;            /* desktop/tablet height */
+  --dl-h-m: 58px;          /* phone height      */
+}
+
 body { color:#444; font-size:1em; line-height:1.6; }
 a { color:#0066cc; text-decoration:none; }
 a:hover { text-decoration:underline; }
@@ -30,9 +36,9 @@ a:hover { text-decoration:underline; }
   max-width:760px;
   margin:14px auto 14px;
   padding:10px 14px;
-  border:1px solid rgba(0,0,0,.12);     /* light border as requested */
+  border:1px solid rgba(0,0,0,.12);       /* light border as requested */
   border-radius:12px;
-  background:rgba(255,255,255,.6);      /* very light backing so border reads */
+  background:rgba(255,255,255,.6);        /* very light backing so border reads */
   backdrop-filter: blur(2px);
   box-shadow:none;
 }
@@ -55,17 +61,18 @@ a:hover { text-decoration:underline; }
 }
 
 /* =========================
-   Google Play badge — fixed height to match Windows button
+   Google Play badge — EXACT height
    ========================= */
 .gp-badge img{
   display:block;
-  height:66px;                          /* unified height */
+  height:var(--dl-h) !important;    /* force exact match with Windows button */
   width:auto;
   max-width:100%;
-  image-rendering: -webkit-optimize-contrast;
+  image-rendering:-webkit-optimize-contrast;
+  vertical-align:middle;
 }
 @media (max-width:560px){
-  .gp-badge img{ height:58px; }         /* unified mobile height */
+  .gp-badge img{ height:var(--dl-h-m) !important; }
 }
 
 /* =========================
@@ -74,7 +81,7 @@ a:hover { text-decoration:underline; }
    HTML: <a class="btn-win btn-win--seg" data-left="DOWNLOAD FOR"
             data-right="WINDOWS COMPANION" href="..."></a>
 */
-.btn-win{                                      /* fallback solid CTA (unused when --seg is present) */
+.btn-win{ /* fallback solid CTA (unused when --seg is present) */
   display:inline-flex; align-items:center; justify-content:center;
   padding:14px 18px; border-radius:10px;
   text-decoration:none!important; color:#fff!important;
@@ -90,44 +97,55 @@ a:hover { text-decoration:underline; }
 .btn-win--seg{
   position:relative;
   display:inline-flex;
-  height:66px;                               /* unified height with Play badge */
+  box-sizing:border-box;
+  height:var(--dl-h);                  /* EXACT same height as Play badge */
   border:1px solid rgba(0,0,0,.18);
   border-radius:8px;
   overflow:hidden;
   background:transparent;
   font-weight:800;
-  font-size:0.95rem;                          /* compact like the reference */
+  font-size:0.95rem;                   /* compact like the reference */
   letter-spacing:.3px;
+  vertical-align:middle;
+}
+
+.btn-win--seg::before,
+.btn-win--seg::after{
+  display:inline-flex;
+  align-items:center;
+  box-sizing:border-box;
+  height:100%;                         /* inherit parent height */
+  line-height:1;                       /* avoid extra vertical pixels */
+  padding:0 16px;
+  color:#fff;
 }
 
 .btn-win--seg::before{
-  content: attr(data-left);                   /* "DOWNLOAD FOR" */
-  display:inline-flex; align-items:center;
-  padding:0 16px;
-  background:#6b7280;                         /* neutral grey */
-  color:#fff;
-  line-height:66px;
+  content: attr(data-left);            /* "DOWNLOAD FOR" */
+  background:#6b7280;                  /* neutral grey */
 }
 
 .btn-win--seg::after{
-  content: attr(data-right);                  /* "WINDOWS COMPANION" */
-  display:inline-flex; align-items:center;
-  padding:0 16px;
-  background:#0d6efd;                         /* Windows blue */
-  color:#fff; font-weight:900;
-  line-height:66px;
+  content: attr(data-right);           /* "WINDOWS COMPANION" */
+  background:#0d6efd;                  /* Windows blue */
+  font-weight:900;
 }
 
 .btn-win--seg:hover::after,
 .btn-win--seg:focus::after{ background:#0b5ed7; }
+
 .btn-win--seg:hover,
 .btn-win--seg:focus{ transform:translateY(-1px); }
+
 .btn-win--seg:active{ transform:translateY(0); }
+
 .btn-win--seg:focus-visible{ outline:3px solid #ffd166; outline-offset:3px; }
 
 @media (max-width:560px){
-  .btn-win--seg{ height:58px; width:100%; }   /* stack neatly under Play badge */
-  .btn-win--seg::before, .btn-win--seg::after{ line-height:58px; }
+  .btn-win--seg{
+    height:var(--dl-h-m);
+    width:100%;                        /* stack neatly under Play badge */
+  }
 }
 
 /* Rendering polish */
