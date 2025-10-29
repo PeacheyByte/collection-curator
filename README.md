@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{ '/assets/css/custom.css?v=3' | relative_url }}">
+
 <!-- App Logo -->
 <p align="center">
   <img src="Sellventory-icon-final.png" alt="Sellventory logo" width="120">
