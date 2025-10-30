@@ -19,7 +19,7 @@
 
    <!-- Windows download button (segmented, matches original) -->
 <a class="btn-win btn-win--seg"
-   href="https://github.com/PeacheyByte/sellventory-companion/releases/latest/download/sellventory.exe"
+   href="https://github.com/PeacheyByte/sellventory-companion/releases/download/V1.0/TCC-Companion.exe"
    data-left="DOWNLOAD FOR"
    data-right="WINDOWS COMPANION"></a>
 
@@ -29,7 +29,7 @@
 
 <!-- === Sellventory navigation buttons === -->
 <div class="sv-nav">
-  <a class="sv-btn" href="/">← Peacheybyte Studios</a>
+  <a class="sv-btn" href="/">Peacheybyte Studios Home</a>
   <a class="sv-btn" href="{{ site.baseurl }}/user-guide/">User Guide</a>
   <a class="sv-btn" href="{{ site.baseurl }}/changelog/">Change Log</a>
   <a class="sv-btn" href="{{ site.baseurl }}/issues/">Known Issues</a>
