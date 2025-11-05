@@ -18,11 +18,11 @@
     </a>
 
    <!-- Windows download button (segmented, matches original) -->
-<a class="btn-win btn-win--seg"
+<!-- <a class="btn-win btn-win--seg"
    href="https://github.com/PeacheyByte/sellventory-companion/releases/download/V1.0/TCC-Companion.exe"
    data-left="DOWNLOAD FOR"
    data-right="WINDOWS COMPANION"></a>
-
+-->
   </div>
 </div>
 
@@ -48,7 +48,7 @@ With The Collection Curator  you can:
 - **Organise by tags and locations.** Group items by category, storage box, shelf, or any system that suits your workflow, so nothing gets lost or overlooked.
 - **Track purchases and sales.** Know exactly when and where you bought an item, what you paid, and the final selling price. This makes it easy to calculate your profit and spot trends in what moves quickly.
 - **Generate reports and exports.** Create spreadsheets for analysis, backup your records, or share summaries when you need them. Exporting is straightforward and works the same way across Android and the Companion desktop app.
-- **Use the Windows & Linux Companion.** Work with your database on a bigger screen, making editing, browsing, and reporting faster and more comfortable.
+- **Use the Windows & Linux Companion.** Coming Soon! Work with your database on a bigger screen, making editing, browsing, and reporting faster and more comfortable.
 
 Everything is stored locally — no logins, no hidden syncs, and no internet required. Sellventory is designed to be lightweight, dependable, and under your control.
 
