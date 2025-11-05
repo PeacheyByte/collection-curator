@@ -18,7 +18,8 @@
     </a>
 
    <!-- Windows download button (segmented, matches original) -->
-<!-- <a class="btn-win btn-win--seg"
+<!-- 
+<a class="btn-win btn-win--seg"
    href="https://github.com/PeacheyByte/sellventory-companion/releases/download/V1.0/TCC-Companion.exe"
    data-left="DOWNLOAD FOR"
    data-right="WINDOWS COMPANION"></a>
