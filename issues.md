@@ -1,74 +1,14 @@
----
-layout: default
-title: Known Issues
-description: Current issues identified by testers
-permalink: /issues/
----
-<!-- Top text nav -->
-<style>
-  .sv-nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:24px 0}
-  .sv-btn{
-    display:inline-block;padding:10px 16px;border:1px solid #0a4d9e;border-radius:8px;
-    text-decoration:none;font-weight:600;background:#0f62fe;color:#fff;line-height:1.2
-  }
-  .sv-btn:visited{color:#fff}
-  .sv-btn:hover{background:#0a53ff;border-color:#083e7a}
-  .sv-btn:focus{outline:3px solid #99c2ff;outline-offset:2px}
-  @media (prefers-color-scheme: dark){
-    .sv-btn{background:#1f6fff;border-color:#3a8bff}
-    .sv-btn:hover{background:#337dff}
-  }
-</style>
-<div class="sv-nav">
-  <a class="sv-btn" href="{{ site.baseurl }}/">Home</a>
-  <a class="sv-btn" href="{{ site.baseurl }}/user-guide/">User Guide</a>
-  <a class="sv-btn" href="{{ site.baseurl }}/changelog/">Change Log</a>
-  <a class="sv-btn" href="{{ site.baseurl }}/issues/">Known Issues</a>
-  <a class="sv-btn" href="{{ site.baseurl }}/roadmap/">Planned Additions</a>
-</div>
-
-<hr style="max-width:880px; margin:0 auto 24px; border:none; border-top:1px solid #e5e5e5;">
-
 # Known Issues
 
-This page lists reported issues so testers know what’s already being tracked.
+This page lists active reports and minor display quirks currently being worked on for future updates.
 
 ---
 
-## Current
-- Some testers reported cache delays when switching between testing tracks.  
-- Minor UI spacing inconsistencies on smaller phones.
+## Open Issues
+* **Cache Delays on Web Pages:** GitHub Pages may occasionally take 1–3 minutes to reflect updated documentation files across sessions.
 
 ---
 
-## Fixed
-- Photo save issue on some devices (fixed in v1.15).  
-- Free tier button closing app unexpectedly (fixed in v1.14).
-
-<!-- Footer buttons (same style everywhere) -->
-<style>
-  .sv-nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:24px 0}
-  .sv-btn{
-    display:inline-block;padding:10px 16px;border:1px solid #0a4d9e;border-radius:8px;
-    text-decoration:none;font-weight:600;background:#0f62fe;color:#fff;line-height:1.2
-  }
-  .sv-btn:visited{color:#fff}
-  .sv-btn:hover{background:#0a53ff;border-color:#083e7a}
-  .sv-btn:focus{outline:3px solid #99c2ff;outline-offset:2px}
-  @media (prefers-color-scheme: dark){
-    .sv-btn{background:#1f6fff;border-color:#3a8bff}
-    .sv-btn:hover{background:#337dff}
-  }
-</style>
-<div class="sv-nav">
-  <a class="sv-btn" href="{{ site.baseurl }}/">Home</a>
-  <a class="sv-btn" href="{{ site.baseurl }}/user-guide/">User Guide</a>
-  <a class="sv-btn" href="{{ site.baseurl }}/changelog/">Change Log</a>
-  <a class="sv-btn" href="{{ site.baseurl }}/issues/">Known Issues</a>
-  <a class="sv-btn" href="{{ site.baseurl }}/roadmap/">Planned Additions</a>
-</div>
-
-
-
----
-{% include footer.html %}
+## Resolved Issues
+* **Badge Display Error:** Resolved grey background container surrounding the Google Play Store badge.
+* **Duplicate Navigation:** Removed hardcoded HTML button rows across sub-pages in favour of the central include template.
