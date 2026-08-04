@@ -1,165 +1,31 @@
----
-layout: default
-title: User Guide
-description: Quick start guide for The Collection Curator Users
-permalink: /user-guide/
----
-<!-- Top text nav -->
-<style>
-  .sv-nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:24px 0}
-  .sv-btn{
-    display:inline-block;padding:10px 16px;border:1px solid #0a4d9e;border-radius:8px;
-    text-decoration:none;font-weight:600;background:#0f62fe;color:#fff;line-height:1.2
-  }
-  .sv-btn:visited{color:#fff}
-  .sv-btn:hover{background:#0a53ff;border-color:#083e7a}
-  .sv-btn:focus{outline:3px solid #99c2ff;outline-offset:2px}
-  @media (prefers-color-scheme: dark){
-    .sv-btn{background:#1f6fff;border-color:#3a8bff}
-    .sv-btn:hover{background:#337dff}
-  }
-</style>
-<div class="sv-nav">
-  <a class="sv-btn" href="{{ site.baseurl }}/">Home</a>
-  <a class="sv-btn" href="{{ site.baseurl }}/user-guide/">User Guide</a>
-  <a class="sv-btn" href="{{ site.baseurl }}/changelog/">Change Log</a>
-  <a class="sv-btn" href="{{ site.baseurl }}/issues/">Known Issues</a>
-  <a class="sv-btn" href="{{ site.baseurl }}/roadmap/">Planned Additions</a>
-</div>
+# The Collection Curator — User Guide
 
-<hr style="max-width:880px; margin:0 auto 24px; border:none; border-top:1px solid #e5e5e5;">
-
-
-## The Collection Curator — User Guide
-
-**Welcome!** This quick guide shows how to add items, what fields matter most, how search/sort/multi-select works, and how to back up or import/export your data. There’s also a short note on the desktop companion.
-
-### Table of contents
-- [How to Add an Item](#how-to-add-an-item)  
-- [The Add / Update Screen](#the-add--update-screen)  
-- [Important Fields to Fill](#important-fields-to-fill)  
-- [Locations (and adding new ones)](#locations-and-adding-new-ones)  
-- [Tags (and adding new tags)](#tags-and-adding-new-tags)  
-- [Main Screen Features](#main-screen-features)  
-  - [Search](#search)  
-  - [Sort](#sort)  
-  - [Hold to Multi-Select (Bulk Update/Delete)](#hold-to-multi-select-bulk-updatedelete)  
-- [Backup, Import & Export](#backup-import--export)  
-  - [Best-practice naming](#best-practice-naming)  
-- [Sellventory Companion (Desktop)](#sellventory-companion-desktop)
+Welcome! This guide explains how to use **The Collection Curator** (TCC) to log items, track purchase/sale data, manage locations, export records, and use the companion app.
 
 ---
 
-## How to Add an Item
-1. **Tap “Add Item”** on the main screen.
-2. Choose **Use Camera** or **Use Gallery**: take a new photo or pick one from your gallery.  
-3. **Fill key details** (see *Important Fields to Fill* below).  
-4. **Tap Save**. Your item appears in the list and gallery.
-
-> Tip: The **Bought Date** auto-fills from the photo’s EXIF when available. You can edit it if needed.
+## Quick Start (3 Steps)
+1. **Add an item:** Tap **+**, add a photo, item title, location, tags, and price.
+2. **Organise:** Filter or search by tags, location, or price on the main list.
+3. **Export / Share:** Use the export tools to generate spreadsheet backups anytime.
 
 ---
 
-## The Add / Update Screen
-Typical fields you’ll see:
-- **Title** – Short name of the item (e.g., “Vintage Copper Pot”).  
-- **Photo** – Optional but strongly recommended for identification.  
-- **Bought Date** – When you acquired it.  
-- **Price (Paid)** – What you paid (used in simple reports later).  
-- **Location** – Where you store it (shelf, bin, room, etc.).  
-- **Tags** – Keywords like *tools, camera, 1970s, pottery*.  
-- **Sold status / Price (Sold)** – If you sold it, record details here.  
-- **Notes** – Anything useful: condition, provenance, buyer/seller info, etc.
-
-Tap **Save** to commit changes, or **Back** to cancel.
+## The Add / Edit Item Screen
+* **Title:** The display name of the item (e.g., "Vintage Camera").
+* **Image:** Tap the photo box to capture or choose a picture.
+* **Description:** Write any extra notes or item history.
+* **Purchase / Selling Price:** Track your cost and resale revenue.
+* **Tags:** Add custom tags for flexible filtering (e.g., "Retro", "For Sale").
 
 ---
 
-## Important Fields to Fill
-While everything helps later, these have the biggest impact:
-1. **Title** – Makes search and lists meaningful.  
-2. **Bought Date** – Useful for sorting and timeline reports.  
-3. **Price (Paid)** – Helps with value summaries and ROI down the track.  
-4. **Location** – Lets you filter/find where things are.  
-5. **At least one Tag** – Powerful for grouping (e.g., *Nintendo*, *Lenses*, *Staging Box A*).
+## Organising by Tags and Locations
+* **Locations:** Assign items to physical spaces like "Shelf A", "Box 3", or "Main Storage".
+* **Tags:** Multi-tag items to build overlapping categories (e.g., `#Electronics`, `#Collectibles`).
 
 ---
 
-## Locations (and adding new ones)
-- On **Add/Update**, tap the **Location** field.  
-- Choose an existing location **or type a new one**; new entries are saved so they appear next time.  
-- Use consistent names (e.g., *Shelf A1*, *Bin Blue 03*) to keep filters clean.
-
-> Tip: If you’re reorganising, you can bulk-update locations from the main screen using multi-select.
-
----
-
-## Tags (and adding new Tags)
-- On **Add/Update**, tap **Tags** and either pick from the list or **type to add** a new tag.  
-- Tags are saved and will show up as suggestions.  
-- Use short, reusable words; avoid near-duplicates (e.g., “Lens” vs “Lenses”).
-
-> Tip: You can add multiple tags to an item. Think categories (*brand, era, material, box label*).
-
----
-
-## Main Screen Features
-
-### Search
-- Use the **search bar** to find items by **Title, Tags, or Location** (and often Notes).  
-- Partial words work; try a brand, storage code, or keyword.
-
-### Sort
-- Use the **Sort** control to reorder by common fields like **Title, Bought Date, or Price**.  
-- Your last choice is remembered for convenience.
-
-### Hold to Multi-Select (Bulk Update/Delete)
-- **Press-and-hold** an item to enter selection mode, then tap others to add them.  
-- Use the bottom or top **bulk actions** to:
-  - **Update** selected items (e.g., change **Location** or **Add/Replace Tags**).  
-  - **Delete** selected items (moves them to deleted/removed in the DB; see Import rules below).
-
----
-
-## Backup, Import & Export
-
-**Backup** (on phone):  
-- Use **Export** in the app to create a file containing your data (and, in the full version, images).  
-- Save to your phone, SD card, or a cloud drive.
-
-**Import** (on phone):  
-- Use **Import** to restore from a previous export.  
-- **Merges** changes: newer edits win. Deleted items stay deleted (tombstoned) so they **don’t re-appear** on import.
-
-> If you also use the **Sellventory Companion** on desktop, you can export from Android, edit/view/report on desktop, and **export back** to Android.
-
-### Best-practice naming
-Use a consistent scheme so you always know what’s newest:
-
----
-
-<!-- Footer buttons (same style everywhere) -->
-<style>
-  .sv-nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:24px 0}
-  .sv-btn{
-    display:inline-block;padding:10px 16px;border:1px solid #0a4d9e;border-radius:8px;
-    text-decoration:none;font-weight:600;background:#0f62fe;color:#fff;line-height:1.2
-  }
-  .sv-btn:visited{color:#fff}
-  .sv-btn:hover{background:#0a53ff;border-color:#083e7a}
-  .sv-btn:focus{outline:3px solid #99c2ff;outline-offset:2px}
-  @media (prefers-color-scheme: dark){
-    .sv-btn{background:#1f6fff;border-color:#3a8bff}
-    .sv-btn:hover{background:#337dff}
-  }
-</style>
-<div class="sv-nav">
-  <a class="sv-btn" href="{{ site.baseurl }}/">Home</a>
-  <a class="sv-btn" href="{{ site.baseurl }}/user-guide/">User Guide</a>
-  <a class="sv-btn" href="{{ site.baseurl }}/changelog/">Change Log</a>
-  <a class="sv-btn" href="{{ site.baseurl }}/issues/">Known Issues</a>
-  <a class="sv-btn" href="{{ site.baseurl }}/roadmap/">Planned Additions</a>
-</div>
-
----
-{% include footer.html %}
+## Exporting Reports & Backups
+* **Export CSV:** Generates a spreadsheet containing all item metadata, purchase prices, and location details.
+* **Backup Data:** Allows you to export local records so you can retain complete control of your data without relying on external cloud services.
