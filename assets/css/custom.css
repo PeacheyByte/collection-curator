@@ -1,175 +1,115 @@
-/* =========================
-   Base text & content tweaks
-   ========================= */
-:root{
-  /* One knob to size BOTH buttons */
-  --dl-h: 66px;            /* desktop/tablet height */
-  --dl-h-m: 58px;          /* phone height      */
+/* ==========================================================================
+   Base & Layout Reset
+   ========================================================================== */
+:root {
+  --dl-h: 66px;         /* Desktop badge/button height */
+  --dl-h-m: 58px;       /* Mobile height */
+  --primary-blue: #1e6bb8;
+  --primary-hover: #155d9a;
+  --max-width: 1000px;  /* Expands the site width for a modern look */
 }
 
-body { color:#444; font-size:1em; line-height:1.6; }
-a { color:#0066cc; text-decoration:none; }
-a:hover { text-decoration:underline; }
-
-.main-content p,
-.main-content li,
-.main-content td,
-.main-content th { color:#222; }
-
-.main-content strong,
-.main-content b { color:#111; font-weight:700; }
-
-.main-content h1,
-.main-content h2,
-.main-content h3,
-.main-content h4,
-.main-content h5,
-.main-content h6 { color:#111; font-weight:700; line-height:1.25; }
-
-.main-content a { color:#0066cc; text-decoration:none; }
-.main-content a:hover { text-decoration:underline; }
-
-/* =========================
-   Downloads card (light frame)
-   ========================= */
-.download-card{
-  max-width:760px;
-  margin:14px auto 14px;
-  padding:10px 14px;
-  border:1px solid rgba(0,0,0,.12);       /* light border as requested */
-  border-radius:12px;
-  background:rgba(255,255,255,.6);        /* very light backing so border reads */
-  backdrop-filter: blur(2px);
-  box-shadow:none;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f8f9fa;
 }
-@media (prefers-color-scheme: dark){
-  .download-card{
-    border-color:rgba(255,255,255,.18);
-    background:rgba(0,0,0,.18);
+
+/* Main Content Container (Full modern width) */
+.main-content {
+  max-width: var(--max-width);
+  margin: 30px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Typography & Links */
+h1, h2, h3, h4, h5, h6 {
+  color: #111;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Hide any remaining default Jekyll theme headers */
+.page-header {
+  display: none !important;
+}
+
+/* ==========================================================================
+   Download Card
+   ========================================================================== */
+.download-card {
+  max-width: 760px;
+  margin: 20px auto;
+  padding: 12px 16px;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 12px;
+  background: rgba(245,247,250,.6);
+}
+
+.dl-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gp-badge img {
+  display: block;
+  height: var(--dl-h) !important;
+  width: auto;
+}
+
+@media (max-width: 560px) {
+  .gp-badge img {
+    height: var(--dl-h-m) !important;
+  }
+  .main-content {
+    margin: 10px;
+    padding: 16px;
   }
 }
 
-/* Row layout */
-.dl-row{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:20px;
-  flex-wrap:wrap;
-  padding:6px 0;
-  margin:0;
+/* ==========================================================================
+   Navigation Buttons
+   ========================================================================== */
+.sv-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 24px 0 32px 0;
 }
 
-/* =========================
-   Google Play badge — EXACT height
-   ========================= */
-.gp-badge img{
-  display:block;
-  height:var(--dl-h) !important;    /* force exact match with Windows button */
-  width:auto;
-  max-width:100%;
-  image-rendering:-webkit-optimize-contrast;
-  vertical-align:middle;
-}
-@media (max-width:560px){
-  .gp-badge img{ height:var(--dl-h-m) !important; }
+.sv-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 1px solid var(--primary-hover);
+  border-radius: 8px;
+  text-decoration: none !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: var(--primary-blue);
+  color: #fff !important;
+  transition: background 0.15s ease, transform 0.1s ease;
 }
 
-/* =========================
-   Windows button (two-segment, original look)
-   =========================
-   HTML: <a class="btn-win btn-win--seg" data-left="DOWNLOAD FOR"
-            data-right="WINDOWS COMPANION" href="..."></a>
-*/
-.btn-win{ /* fallback solid CTA (unused when --seg is present) */
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:14px 18px; border-radius:10px;
-  text-decoration:none!important; color:#fff!important;
-  font-weight:700; font-size:1.05rem; line-height:1.2; letter-spacing:.2px;
-  background:#0b5ed7; border:1px solid #0a53be;
-  transition: transform .08s ease, background .15s ease;
-}
-.btn-win:hover,.btn-win:focus{ background:#0a58ca; transform:translateY(-1px); }
-.btn-win:active{ transform:translateY(0); }
-.btn-win:focus-visible{ outline:3px solid #ffd166; outline-offset:3px; }
-
-/* Exact segmented style (matches original two-piece look) */
-.btn-win--seg{
-  position:relative;
-  display:inline-flex;
-  box-sizing:border-box;
-  height:var(--dl-h);                  /* EXACT same height as Play badge */
-  border:1px solid rgba(0,0,0,.18);
-  border-radius:8px;
-  overflow:hidden;
-  background:transparent;
-  font-weight:800;
-  font-size:0.95rem;                   /* compact like the reference */
-  letter-spacing:.3px;
-  vertical-align:middle;
-}
-
-.btn-win--seg::before,
-.btn-win--seg::after{
-  display:inline-flex;
-  align-items:center;
-  box-sizing:border-box;
-  height:100%;                         /* inherit parent height */
-  line-height:1;                       /* avoid extra vertical pixels */
-  padding:0 16px;
-  color:#fff;
-}
-
-.btn-win--seg::before{
-  content: attr(data-left);            /* "DOWNLOAD FOR" */
-  background:#6b7280;                  /* neutral grey */
-}
-
-.btn-win--seg::after{
-  content: attr(data-right);           /* "WINDOWS COMPANION" */
-  background:#0d6efd;                  /* Windows blue */
-  font-weight:900;
-}
-
-.btn-win--seg:hover::after,
-.btn-win--seg:focus::after{ background:#0b5ed7; }
-
-.btn-win--seg:hover,
-.btn-win--seg:focus{ transform:translateY(-1px); }
-
-.btn-win--seg:active{ transform:translateY(0); }
-
-.btn-win--seg:focus-visible{ outline:3px solid #ffd166; outline-offset:3px; }
-
-@media (max-width:560px){
-  .btn-win--seg{
-    height:var(--dl-h-m);
-    width:100%;                        /* stack neatly under Play badge */
-  }
-}
-
-/* Rendering polish */
-.btn-win, .btn-win--seg, .btn-win *{
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings:"liga" 1,"kern" 1;
-}
-
-/* =========================
-   Navigation chips (kept lighter)
-   ========================= */
-.sv-nav{
-  display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin:22px 0;
-}
-.sv-btn{
-  display:inline-block; padding:12px 18px; border:1px solid #155d9a; border-radius:10px;
-  text-decoration:none; font-weight:700; font-size:0.98rem; background:#1e6bb8; color:#fff;
-  line-height:1.2; letter-spacing:.2px; box-shadow:0 2px 6px rgba(0,0,0,.12);
-}
-.sv-btn:link,.sv-btn:visited{ color:#fff; background:#1e6bb8; border-color:#155d9a; }
-.sv-btn:hover{ background:#155d9a; border-color:#0f4c86; box-shadow:0 3px 10px rgba(0,0,0,.18); }
-.sv-btn:focus{ outline:3px solid #99c2ff; outline-offset:2px; }
-@media (prefers-color-scheme: dark){
-  .sv-btn{ background:#2a7bd6; border-color:#1c5ea6; }
-  .sv-btn:hover{ background:#1f6ac0; }
+.sv-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
 }
